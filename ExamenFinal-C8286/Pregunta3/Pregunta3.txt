@@ -1,0 +1,25 @@
+Pregunta3: Implementa un sistema distribuido en Python para la ejecución de tareas científicas en una red de computadoras, utilizando los siguientes algoritmos:
+Dijstra-Scholten: Detección de terminación de procesos distribuidos.
+Ricart-Agrawala: Exclusión mutua en el acceso a recursos compartidos.
+Sincronización de relojes: Asegura que todos los nodos tengan una vista consistente del tiempo.
+Algoritmo Cheney: Gestiona la memoria en los nodos de computación.
+
+Explicacion Salida:
+Sincronizacion de Relojes:
+
+Cada nodo sincroniza su reloj enviando mensajes de sincronizacion a los otros nodos.
+Este proceso asegura que todos los nodos tengan una vista consistente del tiempo, utilizando relojes logicos para mantener el orden de los eventos.
+
+Solicitudes de Exclusion Mutua:
+El nodo 0 solicita acceso a la seccion critica utilizando el algoritmo de Ricart-Agrawala, enviando solicitudes a los otros nodos y recibiendo respuestas.
+Despues de un segundo, el nodo 0 libera la seccion critica, enviando respuestas a cualquier solicitud diferida.
+
+Recoleccion de Basura:
+Cada nodo inicia la recoleccion de basura utilizando el algoritmo de Cheney.
+Este algoritmo divide el espacio de memoria en dos partes: from_space y to_space, y copia objetos vivos de from_space a to_space, limpiando from_space al final del proceso.
+
+Deteccion de Terminacion:
+Cada nodo detecta la terminacion de los procesos distribuidos utilizando el algoritmo de Dijkstra-Scholten.
+El nodo inicial envia mensajes de sondeo a sus hijos y espera respuestas para determinar si puede declarar la terminacion.
+
+
