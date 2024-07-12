@@ -1,0 +1,26 @@
+Pregunta2: Crea un sistema de coordinación de tareas en una red de robots industriales.
+
+Usamos el algoritmo Chandy-Lamport el cual toma instantáneas del estado global de los robots durante la ejecución de n tareas, ya que nos garantiza que se capture un estado global consistente sin necesidad de sincronización de relojes entre los procesos.
+# Usaremos MARKER como marcador de mensajes donde se coordinara la captura del estado global.
+
+Usamos el algoritmo Raymond se utiliza una estructura de arbol en la que los nodos pasan un token de control a lo largo de las ramas del árbol. Solo el nodo que posee el token puede acceder al recurso crítico. Cuando un nodo desea acceder al recurso, envía una solicitud a su padre en el árbol. 
+
+
+Usamos relojes vectoriales para proporcionar un orden parcial de eventos en un sistema distribuido y pueden detectar violaciones de causalidad. Cada nodo mantiene un vector de tiempos lógicos, uno por cada nodo en el sistema.
+
+#Integramos un recolector de basura como el algoritmo de Cheney donde dividimos la memoria en dos semiespacios y alternamos entre ellos. Durante la recolección, copia los objetos vivos del semiespacio actual al otro semiespacio, compactando la memoria y eliminando la fragmentación.
+
+Explicacion de la Salida
+Solicitudes de Recurso:
+Los robots 1, 2 y 0 solicitaran el recurso compartido en ese orden.
+El robot que tiene inicialmente el token (robot 0) manejara estas solicitudes y transferira el token segun sea necesario.
+Veras mensajes de registro indicando que los robots estan enviando solicitudes y transfiriendo el token de recurso.
+Instantaneas:
+Cada robot tomara una instantanea de su estado actual y de su reloj vectorial.
+Veras mensajes de registro indicando el estado y el reloj vectorial de cada robot.
+Recoleccion de Basura:
+El recolector de basura generacional movera objetos de la generacion joven a la generacion vieja y limpiara la generacion joven.
+Veras mensajes indicando el inicio y la finalizacion de la recoleccion de basura.
+
+
+
