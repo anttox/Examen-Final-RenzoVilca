@@ -1,0 +1,28 @@
+Pregunta4: Implementar un sistema distribuido en Python que simule las tres propiedades del Teorema CAP: consistencia, disponibilidad y tolerancia a particiones. El sistema debe demostrar cómo se comporta bajo diferentes configuraciones.
+
+CA: Sistemas donde la partición de la red es una rareza.
+
+CP: Sistemas que sacrifican la disponibilidad durante una partición de red, además garantizan que los datos sean consistentes y permitan que el sistema se recupere después de una partición sin comprometer la integridad de los datos. 
+
+AP: Para aplicaciones donde la disponibilidad es crítica y se puede tolerar la consistencia eventual, se priorizan la disponibilidad y la tolerancia a particiones. Estos sistemas aseguran que los datos sean eventualmente consistentes, pero siempre están disponibles para lecturas y escrituras.
+
+Explicación de la Salida
+
+Eleccion de Lider:
+Al inicio, se elige un lider entre los nodos. Veremos mensajes de registro indicando que nodo ha sido elegido como lider.
+
+Actualizacion de Datos:
+Cuando el lider recibe una solicitud de actualizacion de datos, propaga esta actualizacion a todos los nodos.
+Veras mensajes de registro indicando que los datos han sido actualizados en cada nodo.
+
+Simulacion de Fallos:
+Se simulan fallos en algunos nodos, y estos nodos dejan de recibir y procesar mensajes temporalmente.
+Veras mensajes de registro indicando que los nodos han fallado.
+
+Recuperacion de Nodos:
+Despues de un tiempo, los nodos fallidos se recuperan y vuelven a conectarse a la red.
+Veras mensajes de registro indicando que los nodos se han recuperado.
+
+Consistencia y Sincronizacion: Los nodos recuperados se re-sincronizan con el lider para asegurarse de que tienen la copia correcta y actualizada de los datos.
+Esto demuestra la consistencia eventual del sistema.
+
